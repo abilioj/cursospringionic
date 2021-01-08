@@ -12,14 +12,13 @@ import { ClienteService } from '../../services/domain/cliente.service';
 })
 export class ProfilePage {
 
-  imageUrlDefull: string;
-  cliente: ClienteDTO;
-
   constructor(
     public navCtrl: NavController
     , public navParams: NavParams
     , public storage: StorageService
     , public clienteService: ClienteService
+    , public cliente: ClienteDTO
+    , public imageUrlDefull: string
   ) {
   }
 
