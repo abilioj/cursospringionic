@@ -49,4 +49,7 @@ export class ProdutosPage {
     //}
   }
 
+  showDetail(id: Number){
+    this.navCtrl.push('ProdutoDetailPage');
+  }
 }
