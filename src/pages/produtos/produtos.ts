@@ -29,7 +29,7 @@ export class ProdutosPage {
       });
   }
 
-  loadImageUrls() {
+  loadImageUrls() {}
     // loadImageUrls(start: number, end: number) {
     // for (var i = start; i <= end; i++) {
       // for (var i = 0; i <= this.items.length; i++) {
@@ -40,6 +40,5 @@ export class ProdutosPage {
       //   },
       //     error => { });
     // }
-  }
 
 }
