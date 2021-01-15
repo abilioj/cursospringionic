@@ -17,7 +17,7 @@ export class ProdutoDetailPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public produtoService: ProdutoService
-  ) { }
+  ) {}
 
   ionViewDidLoad() {
     let produto_id = this.navParams.get('produto_id');
