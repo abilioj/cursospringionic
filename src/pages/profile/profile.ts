@@ -13,18 +13,18 @@ import { ClienteService } from '../../services/domain/cliente.service';
 
 export class ProfilePage {
 
+    cliente: ClienteDTO;
+    imageUrlDefull: string;
+
   constructor(
     public navCtrl: NavController
     , public navParams: NavParams
     , public storage: StorageService
     , public clienteService: ClienteService
-    , public cliente: ClienteDTO
-    , public imageUrlDefull: string
   ) {
   }
 
   ionViewDidLoad() {
-    this.imageUrlDefull = 'assets/imgs/avatar-blank.png';
     let localUser = this.storage.getLocalUser();
     if (localUser && localUser.email) {
       this.clienteService.findByEmail(localUser.email)

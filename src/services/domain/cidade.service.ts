@@ -7,9 +7,7 @@ import { Observable } from "rxjs/Rx";
 @Injectable()
 export class CidadeService {
 
-    constructor(
-        public http: HttpClient
-        ) {}
+    constructor(public http: HttpClient) {}
 
     findAll(estado_id : string) : Observable<CidadeDTO[]>  {
         return this.http.get<CidadeDTO[]>(`${API_CONFIG.baseUrl}/estados/${estado_id}/cidades`);

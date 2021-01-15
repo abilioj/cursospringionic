@@ -31,16 +31,16 @@ export class MyApp {
           this.platform.registerBackButtonAction(() => {
               app.navPop();
           });
-      })       
+      });
 
     this.initializeApp();
 
-    // used for an example of ngFor and navigation
+    // usado para um exemplo de ngFor e navegação
     this.pages = [
       //{ title: 'Home', component: 'HomePage' },
       { title: 'Categorias', component: 'CategoriasPage' }
       , { title: 'Profile', component: 'ProfilePage' }
-      //, { title: 'Produtos', component: 'ProdutosPage'}
+      // , { title: 'Produtos', component: 'ProdutosPage'}
       , { title: 'Logout', component: '' }
       //,{ title: 'List', component: ListPage } // - tamos usando "lazy loanding" pra  otimizar o caregamentos
     ];

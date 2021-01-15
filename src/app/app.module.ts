@@ -25,8 +25,10 @@ import { AuthInterceptorProvider } from '../interceptors/AuthInterceptor';
     //,ListPage //- apagamos esse modulo
   ],
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
+    BrowserModule,    
+    IonicModule.forRoot(MyApp, {
+      preloadModules: true
+    }),
     HttpClientModule
   ],
   bootstrap: [IonicApp],
@@ -45,7 +47,7 @@ import { AuthInterceptorProvider } from '../interceptors/AuthInterceptor';
     ,AuthService
     ,StorageService
     ,ClienteService
-    ,ProdutoService
+    ,ProdutoService 
   ]
 })
 export class AppModule {}
