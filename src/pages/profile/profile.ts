@@ -10,6 +10,7 @@ import { ClienteService } from '../../services/domain/cliente.service';
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
+
 export class ProfilePage {
 
   constructor(
