@@ -35,7 +35,8 @@ export class CartPage {
         this.produtosService.getSmallImageFromBucket(item.produto.id)
           .subscribe(response => {
             item.produto.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.produto.id}-small.jpg`;
-          }, error => { });
+          },
+          error => {});
       } catch (e) {
 
       }
