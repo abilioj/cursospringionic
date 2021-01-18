@@ -4,9 +4,9 @@ import { Cart } from '../models/cart';
 import { LocalUser } from '../models/local.user';
 
 @Injectable()
-export class StorageService{
+export class StorageService {
 
-    getLocalUser() : LocalUser {
+    getLocalUser(): LocalUser {
         let usr = localStorage.getItem(STORAGE_KEYS.localUser);
         if (usr == null) {
             return null;
@@ -16,7 +16,7 @@ export class StorageService{
         }
     }
 
-    setLocalUser(obj : LocalUser) {
+    setLocalUser(obj: LocalUser) {
         if (obj == null) {
             localStorage.removeItem(STORAGE_KEYS.localUser);
         }
@@ -25,9 +25,9 @@ export class StorageService{
         }
     }
 
-    getCart() : Cart {
+    getCart(): Cart {
         let str = localStorage.getItem(STORAGE_KEYS.cart);
-        if (str == null) {
+        if (str != null) {
             return JSON.parse(str);
         }
         else {
@@ -35,12 +35,12 @@ export class StorageService{
         }
     }
 
-    setCart(obj : Cart) {
+    setCart(obj: Cart) {
         if (obj == null) {
-            localStorage.setItem(STORAGE_KEYS.cart, JSON.stringify(obj));
+            localStorage.removeItem(STORAGE_KEYS.cart);
         }
         else {
-            localStorage.removeItem(STORAGE_KEYS.cart);
+            localStorage.setItem(STORAGE_KEYS.cart, JSON.stringify(obj));
         }
     }
 }

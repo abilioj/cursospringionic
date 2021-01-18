@@ -25,8 +25,8 @@ export class CartPage {
   }
 
   ionViewDidLoad() {
-    // let cart = this.storage.getCart();
-    let cart = this.cartService.getCart();
+    let cart = this.storage.getCart();
+    // let cart = this.cartService.getCart();
     this.items = cart.items;
     this.loadImageUrls();
   }
@@ -43,5 +43,5 @@ export class CartPage {
 
       }
     }
-  } 
+  }
 }

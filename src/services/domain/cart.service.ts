@@ -3,9 +3,7 @@ import { Cart } from '../../models/cart';
 import { ProdutoDTO } from '../../models/produto.dto';
 import { StorageService } from '../storage.service';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class CartService {
 
     constructor(public storage: StorageService) {
@@ -35,7 +33,7 @@ export class CartService {
             }
             this.storage.setCart(cart);
         }catch(e){
-
+            console.log(e);
         }
         return cart;
     }
