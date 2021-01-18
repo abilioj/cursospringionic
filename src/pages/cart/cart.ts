@@ -4,7 +4,6 @@ import { API_CONFIG } from '../../config/api.config';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/domain/cart.service';
 import { ProdutoService } from '../../services/domain/produto.service';
-import { StorageService } from '../../services/storage.service';
 
 @IonicPage()
 @Component({
@@ -20,13 +19,11 @@ export class CartPage {
     , public navParams: NavParams
     , public cartService: CartService
     , public produtosService: ProdutoService
-    ,public storage: StorageService
   ) {
   }
 
   ionViewDidLoad() {
-    let cart = this.storage.getCart();
-    // let cart = this.cartService.getCart();
+    let cart = this.cartService.getCart();
     this.items = cart.items;
     this.loadImageUrls();
   }
