@@ -59,4 +59,8 @@ export class CartPage {
   total() : number{
     return this.cartService.total();
   }
+
+  goOn(){
+    this.navCtrl.setRoot('CategoriasPage');
+  }
 }
