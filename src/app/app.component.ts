@@ -41,6 +41,7 @@ export class MyApp {
       { title: 'Categorias', component: 'CategoriasPage' }
       , { title: 'Profile', component: 'ProfilePage' }
       // , { title: 'Produtos', component: 'ProdutosPage'}
+      , { title: 'Carrinho', component: 'CartPage'}
       , { title: 'Logout', component: '' }
       //,{ title: 'List', component: ListPage } // - tamos usando "lazy loanding" pra  otimizar o caregamentos
     ];
