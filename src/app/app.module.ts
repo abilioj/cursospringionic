@@ -4,8 +4,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-//import { HomePage } from '../pages/home/home';
-//import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,6 +14,7 @@ import { StorageService } from '../services/storage.service';
 import { ClienteService } from '../services/domain/cliente.service';
 import { ProdutoService } from '../services/domain/produto.service';
 import { AuthInterceptorProvider } from '../interceptors/AuthInterceptor';
+import { CartService } from '../services/domain/cart.service';
 
 //decaretor para declara a class pra ser modulo
 @NgModule({
@@ -25,11 +24,11 @@ import { AuthInterceptorProvider } from '../interceptors/AuthInterceptor';
     //,ListPage //- apagamos esse modulo
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,
+    HttpClientModule,    
     IonicModule.forRoot(MyApp, {
       preloadModules: true
-    }),
-    HttpClientModule
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +46,8 @@ import { AuthInterceptorProvider } from '../interceptors/AuthInterceptor';
     ,AuthService
     ,StorageService
     ,ClienteService
-    ,ProdutoService 
+    ,ProdutoService
+    ,CartService
   ]
 })
 export class AppModule {}

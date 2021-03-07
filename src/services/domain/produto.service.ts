@@ -30,4 +30,8 @@ export class ProdutoService {
     return this.http.get(url, {responseType : 'blob'});
   }  
 
+  getImageFromBucket(id : number) : Observable<any> {
+    let url = `${API_CONFIG.bucketBaseUrl}/prod${id}.jpg`;
+    return this.http.get(url, {responseType : 'blob'});
+  };
 }

@@ -21,7 +21,6 @@ export class ProdutosPage {
   }
 
   ionViewDidLoad() {
-    console.clear();
     let categoria_id = this.navParams.get('categoria_id');
     this.produtosService.findByCategoria(categoria_id)
       .subscribe(response => {
@@ -49,7 +48,7 @@ export class ProdutosPage {
     //}
   }
 
-  showDetail(id: Number){
-    this.navCtrl.push('ProdutoDetailPage');
+  showDetail(produto_id: Number){
+    this.navCtrl.push('ProdutoDetailPage',{produto_id: produto_id});
   }
 }
