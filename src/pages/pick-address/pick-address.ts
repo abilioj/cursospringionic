@@ -1,3 +1,5 @@
+import { ClienteService } from './../../services/domain/cliente.service';
+import { StorageService } from './../../services/storage.service';
 import { EnderecoDTO } from './../../models/endereco.dto';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -18,11 +20,33 @@ export class PickAddressPage {
 
   items: EnderecoDTO[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController
+    , public navParams: NavParams
+    , public storage: StorageService
+    , public clienteService: ClienteService
+    ) {
   }
 
   ionViewDidLoad() {
-    this.items = [
+    let localUser = this.storage.getLocalUser();
+    if (localUser && localUser.email) {
+      this.clienteService.findByEmail(localUser.email)
+        .subscribe(response => {
+          this.items = response['enderecos']
+        },
+          error => {
+            if (error.status == 403) {
+            }
+          });
+    } else {
+    }
+  }
+
+}
+
+/*
+[
       {
         id: "1",
         logradouro: "rua a",
@@ -54,6 +78,4 @@ export class PickAddressPage {
         }
       }
     ]
-  }
-
-}
+*/
