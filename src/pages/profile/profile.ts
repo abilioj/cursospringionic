@@ -13,7 +13,7 @@ import { ClienteService } from '../../services/domain/cliente.service';
 
 export class ProfilePage {
 
-  cliente: ClienteDTO;
+  cliente: ClienteDTO[];
   imageUrlDefull: string;
 
   constructor(
@@ -29,7 +29,7 @@ export class ProfilePage {
     if (localUser && localUser.email) {
       this.clienteService.findByEmail(localUser.email)
         .subscribe(response => {
-          this.cliente = response as ClienteDTO;
+          this.cliente = response as ClienteDTO[];
           this.getImageIfExists();
         },
           error => {
